@@ -70,6 +70,32 @@ Your next step is to take what you have learned from prior playgrounds, and, wri
     * letters occur in the output string based on the proabability with which they occurred in the input string
 
 */
+var outputString: String = ""
+
+for _ in 1...30 {
+    
+    let newRandomValue = arc4random_uniform(1000)
+    
+    let newRandomValueFloat = Float(newRandomValue) / 10
+    
+    var upperValue: Float = 0
+    for (letter,probability) in letterProbabilities {
+        
+        upperValue += probability
+        
+        if (newRandomValueFloat < upperValue) {
+            
+            outputString += String(letter)
+            
+            break
+        }
+    }
+}
+
+
+outputString
+outputString.characters.count
+
 
 /*
 
